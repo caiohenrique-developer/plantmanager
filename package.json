@@ -1,4 +1,16 @@
 {
+  "name": "plantmanager",
+  "description": ":seedling: An application to manage the routine of taking care of your plants :rose:",
+  "main": "index.js",
+  "repository": "https://github.com/caiohenrique-developer/plantmanager.git",
+  "bugs": {
+    "url": "https://github.com/caiohenrique-developer/plantmanager/issues"
+  },
+  "author": "Caio Henrique <caiohenrique.developer@gmail.com> (https://github.com/caiohenrique-developer)",
+  "version": "1.0.1",
+  "license": "MIT",
+  "private": true,
+  "keywords": [],
   "scripts": {
     "commit": "git-cz"
   },
