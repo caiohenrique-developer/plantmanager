@@ -1,5 +1,5 @@
 import React from "react";
-import { UserIdentification } from "./src/pages/UserIdentification";
+import Routes from "./src/routes";
 import {
   useFonts,
   Jost_400Regular,
@@ -15,5 +15,5 @@ export default function App() {
 
   if (!fonstLoaded) return <AppLoading />;
 
-  return <UserIdentification />;
+  return <Routes />;
 }
