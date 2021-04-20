@@ -7,10 +7,10 @@ import {
   Text,
   TextInput,
   KeyboardAvoidingView,
+  TouchableWithoutFeedback,
   Platform,
   Keyboard,
 } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { Button } from "../components/Button";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
