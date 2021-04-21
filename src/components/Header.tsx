@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
-import profileAvatar from "../assets/thay.png";
+import profileAvatar from "../assets/46091590692_00208f6a08_b.jpg";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 

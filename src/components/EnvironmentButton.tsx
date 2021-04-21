@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
 import colors from "../styles/colors";
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: colors.shape,
     borderRadius: 12,
-    marginRight: 5,
+    marginHorizontal: 5,
   },
   containerActive: {
     backgroundColor: colors.green_light,
