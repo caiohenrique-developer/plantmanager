@@ -1,0 +1,50 @@
+import React from "react";
+import { StyleSheet, View, Text, Image } from "react-native";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { RectButton, RectButtonProps } from "react-native-gesture-handler";
+
+import colors from "../styles/colors";
+import fonts from "../styles/fonts";
+
+interface EnvironmentButtonProps extends RectButtonProps {
+  title: string;
+  active?: boolean;
+}
+
+export function EnvironmentButton({
+  title,
+  active = false,
+  ...rest
+}: EnvironmentButtonProps) {
+  return (
+    <RectButton
+      style={[styles.container, active && styles.containerActive]}
+      {...rest}
+    >
+      <Text style={[styles.text, active && styles.textActive]}>{title}</Text>
+    </RectButton>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 76,
+    height: 40,
+    backgroundColor: colors.shape,
+    borderRadius: 12,
+    marginRight: 5,
+  },
+  containerActive: {
+    backgroundColor: colors.green_light,
+  },
+  text: {
+    color: colors.heading,
+    fontFamily: fonts.text,
+  },
+  textActive: {
+    fontFamily: fonts.heading,
+    color: colors.green_dark,
+  },
+});
