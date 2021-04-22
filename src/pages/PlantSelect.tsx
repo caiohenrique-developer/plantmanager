@@ -93,7 +93,7 @@ export function PlantSelect() {
   };
 
   const plantSave = (plant: PlantsProps) => {
-    navigation.navigate("PlantSave");
+    navigation.navigate("PlantSave", { plant });
   };
 
   useEffect(() => {
