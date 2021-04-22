@@ -7,6 +7,7 @@ import { listPlant, PlantProps } from "../libs/storage";
 import waterdrop from "../assets/waterdrop.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
+import { PlantCardSecondary } from "../components/PlantCardSecondary";
 
 export function MyPlant() {
   const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
@@ -53,7 +54,7 @@ export function MyPlant() {
         <FlatList
           data={myPlants}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Text>dfadfadfa</Text>}
+          renderItem={({ item }) => <PlantCardSecondary data={item} />}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ flex: 1 }}
         />
