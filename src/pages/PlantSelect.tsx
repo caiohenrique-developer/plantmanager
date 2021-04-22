@@ -44,7 +44,6 @@ export function PlantSelect() {
 
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [loadedAll, setLoadedAll] = useState(false);
 
   const handleEnvironmentActive = (environment: string) => {
     setEnvironmentActive(environment);
@@ -59,9 +58,14 @@ export function PlantSelect() {
   };
 
   const fetchPlants = async () => {
-    const { data: plants } = await api.get(
-      `plants?_sort=name&_order=asc&_page=${page}&_limit=6`
-    );
+    const { data: plants } = await api.get("plants", {
+      params: {
+        _sort: "name",
+        _order: "asc",
+        _page: page,
+        _limit: 6,
+      },
+    });
 
     if (!plants) return setIsLoading(true);
 
@@ -87,9 +91,12 @@ export function PlantSelect() {
 
   useEffect(() => {
     const fetchPlantsEnvironment = async () => {
-      const { data: plantsEnvironment } = await api.get(
-        "plants_environments?_sort=title&_order=asc"
-      );
+      const { data: plantsEnvironment } = await api.get("plants_environments", {
+        params: {
+          _sort: "title",
+          _order: "asc",
+        },
+      });
 
       setPlantsEnvironment([
         { key: "all", title: "Todos" },
@@ -118,6 +125,7 @@ export function PlantSelect() {
       <View>
         <FlatList
           data={plantsEnvironment}
+          keyExtractor={(item) => String(item.key)}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
@@ -134,6 +142,7 @@ export function PlantSelect() {
       <View style={styles.plants}>
         <FlatList
           data={filterPlants}
+          keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => <PlantCardPrimary data={item} />}
           showsVerticalScrollIndicator={false}
           numColumns={2}

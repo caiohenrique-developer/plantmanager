@@ -17,7 +17,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "json-server": "json-server ./src/services/server.json --delay 5000 --port 3333 --host 192.168.0.106",
+    "json-server": "json-server ./src/services/server.json -w -d 5000 -p 3333 -H 192.168.0.106",
     "commit": "git-cz"
   },
   "config": {
@@ -31,6 +31,7 @@
   "dependencies": {
     "@expo-google-fonts/jost": "^0.1.0",
     "@expo/vector-icons": "^12.0.0",
+    "@react-native-async-storage/async-storage": "^1.13.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
