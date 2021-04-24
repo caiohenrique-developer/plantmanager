@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import colors from "../styles/colors";
 import { PlantSelect } from "../pages/PlantSelect";
 import { MaterialIcons } from "@expo/vector-icons";
-import { color } from "react-native-reanimated";
 import { MyPlant } from "../pages/MyPlant";
 
 const AppTab = createBottomTabNavigator();

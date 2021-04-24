@@ -8,6 +8,7 @@ import waterdrop from "../assets/waterdrop.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 import { PlantCardSecondary } from "../components/PlantCardSecondary";
+import { Load } from "../components/Load";
 
 export function MyPlant() {
   const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
@@ -25,7 +26,7 @@ export function MyPlant() {
       );
 
       setNextWatered(
-        `Não se esque de regar a ${plantsStoraged[0].name} as ${nextTime} horas.`
+        `Não se esqueça de regar a ${plantsStoraged[0].name} as ${nextTime} horas.`
       );
 
       setMyPlants(plantsStoraged);
@@ -36,6 +37,8 @@ export function MyPlant() {
     loadStorageData();
   }, []);
 
+  if (loading) return <Load />;
+
   return (
     <View style={styles.container}>
       <Header />
@@ -43,9 +46,7 @@ export function MyPlant() {
       <View style={styles.spotlight}>
         <Image source={waterdrop} style={styles.spotlightImage} />
 
-        <Text style={styles.spotlightText}>
-          Um texto qualquer para o Spotlight
-        </Text>
+        <Text style={styles.spotlightText}>{nextWatered}</Text>
       </View>
 
       <View style={styles.plants}>
