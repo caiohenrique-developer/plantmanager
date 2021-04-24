@@ -24,10 +24,10 @@ export function UserIdentification() {
   const navigation = useNavigation();
 
   async function handleNavigate() {
-    if (!name) return Alert.alert("Me diz como chamar você! 🤔");
+    // if (!name) return Alert.alert("Me diz como chamar você! 🤔");
 
     try {
-      await AsyncStorage.setItem("@PlantManager:username", name);
+      // await AsyncStorage.setItem("@PlantManager:username", name);
 
       navigation.navigate("Confirmation", {
         title: "Prontinho",

@@ -16,15 +16,25 @@ export default function App() {
   });
 
   useEffect(() => {
-    const subscription = Notifications.addNotificationReceivedListener(
-      async (notification) => {
-        const data = notification.request.content.data.plant as PlantProps;
+    async function notifications() {
+      // notifications listener
+      const subscription = Notifications.addNotificationReceivedListener(
+        async (notification) => {
+          notification.request.content.data.plant as PlantProps;
+        }
+      );
 
-        console.log(data);
-      }
-    );
+      // remmove all notifications
+      // await Notifications.cancelAllScheduledNotificationsAsync();
 
-    return () => subscription.remove();
+      // show all notifications
+      const data = await Notifications.getAllScheduledNotificationsAsync();
+      console.log(data);
+
+      return () => subscription.remove();
+    }
+
+    notifications();
   }, []);
 
   if (!fonstLoaded) return <AppLoading />;
